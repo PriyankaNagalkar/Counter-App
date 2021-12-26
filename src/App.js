@@ -1,24 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState,useEffect } from "react";
+import "./App.css";
 
 function App() {
+  const [count, setCount] = useState(0);
+
+  const [message, setMessage] = useState("");
+
+  const increment = () => {
+    setCount(count + 1 >= 10 ? 10 : count + 1);
+    setMessage(count >= 10 ? "Value can't greater than 100" : `Your current value of count is ${count}`);
+  };
+
+  const decrement = () => {
+    setCount(count <= 0 ? 0 : count - 1);
+    setMessage(count<=0? "Value can't be less than 0":`Your current value of count is ${count}`);
+  }
+
+  const reset = () => {
+    setCount(0);
+    setMessage("")
+  }
+
+ 
+
+  
   return (
+    
+    <div className="container">
+      <h1 className="heading">Welcome to My Counter</h1>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      {/* <h1>Hello</h1> */}
+      <header>
+        {/* <h1 className="heading">Welcome to My Counter</h1> */}
       </header>
-    </div>
+      <h2>{message}</h2>
+      <button onClick={increment}>Increase Value</button>
+      <button onClick={decrement}>Decrease Value</button>
+      <button onClick={reset}>Reset Value</button>
+      </div>
+      </div>
   );
 }
 
