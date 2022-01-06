@@ -7,8 +7,8 @@ function App() {
   const [message, setMessage] = useState("");
 
   const increment = () => {
-    setCount(count + 1 >= 10 ? 10 : count + 1);
-    setMessage(count >= 10 ? "Value can't greater than 100" : `Your current value of count is ${count}`);
+    setCount(count + 1 >= 100 ? 100 : count + 1);
+    setMessage(count >= 100 ? "Value can't greater than 100" : `Your current value of count is ${count}`);
   };
 
   const decrement = () => {
@@ -21,14 +21,10 @@ function App() {
     setMessage("")
   }
 
- 
-
-  
-  return (
-    
-    <div className="container">
+return (
+      <div className="container">
       <h1 className="heading">Welcome to My Counter</h1>
-    <div className="App">
+      <div className="App">
       {/* <h1>Hello</h1> */}
       <header>
         {/* <h1 className="heading">Welcome to My Counter</h1> */}
