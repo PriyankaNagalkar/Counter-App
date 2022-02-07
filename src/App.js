@@ -42,7 +42,8 @@ function App() {
 
   return (
     <div className="container">
-      <h1 className="heading">Welcome to My Counter</h1>
+//       <h1 className="heading">Welcome to My Counter</h1>
+    <marquee className="heading" direction="left" height="50px" width="350px" scrollamount="5">Welcome to My Counter..</marquee>
       <div className="App">
         <h2>
           {message} {count}
